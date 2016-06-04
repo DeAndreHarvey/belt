@@ -41,8 +41,8 @@
          
       </tr>
       
-      {% endfor%}
                        
+      {% endfor%}
       <table>
                 
               </div>
@@ -57,9 +57,10 @@
         <td>Plan</td>
         <td>Do You Want To Join?</td>
       </tr>
+        
     {% for trip in trips %}
-                          {% for add in added %}
-        {%if trip['id'] != session['id'] and add['trip_id']!= trip['id'] %}
+        {%if trip['user_id'] != session['id']%}
+            
       <tr>
           <td>{{trip['name']}}</td>
           <td> <a href="/travels/destination/{{trip['id']}}">{{trip['dest']}}</a></td>
@@ -69,10 +70,9 @@
           <td>
               <a href="/add_userstrips/{{trip['id']}}" >Join</a>
           </td>
-      </tr>
+      </tr>            
         {% endif %}
-      {% endfor%}
-         {% endfor%}                  
+         {% endfor%}        
       <table>
               </div>
                           

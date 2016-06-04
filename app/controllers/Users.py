@@ -61,8 +61,7 @@ class Users(Controller):
         added = self.models['Trip'].get_addedtrips(session['id'])
         usertrips = self.models['Trip'].get_trip_by_id(session['id'])
         joined= self.models['Trip'].get_usertrips_by_id(session['id'])
-        print joined
-        print added
+        print travels
         return self.load_view('travels.html', trips = travels, usertrips=usertrips, joined=joined, added =added)
     
     def travels_add(self):
